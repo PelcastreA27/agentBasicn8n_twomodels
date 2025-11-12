@@ -1,0 +1,170 @@
+{
+  "name": "Agentes",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hola mi nombre es Anne , en que puedo ayudarte hoy...",
+        "options": {
+          "customCss": ":root {\n  /* Colors */\n  --chat--color-primary: #1e1e1e; /* negro principal */\n  --chat--color-primary-shade-50: #2c2c2c;\n  --chat--color-primary-shade-100: #383838;\n  --chat--color-secondary: #3d3d3d; /* gris intermedio */\n  --chat--color-secondary-shade-50: #505050;\n  --chat--color-white: #f5f5f5; /* blanco suave */\n  --chat--color-light: #e0e0e0;  /* gris claro */\n  --chat--color-light-shade-50: #cccccc;\n  --chat--color-light-shade-100: #b0b0b0;\n  --chat--color-medium: #999999;\n  --chat--color-dark: #0d0d0d; /* casi negro */\n  --chat--color-disabled: #666666;\n  --chat--color-typing: #444444;\n\n  /* Base Layout */\n  --chat--spacing: 1rem;\n  --chat--border-radius: 0.4rem;\n  --chat--transition-duration: 0.15s;\n  --chat--font-family: (\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen-Sans,\n    Ubuntu,\n    Cantarell,\n    'Helvetica Neue',\n    sans-serif\n  );\n\n  /* Window Dimensions */\n  --chat--window--width: 400px;\n  --chat--window--height: 600px;\n  --chat--window--bottom: var(--chat--spacing);\n  --chat--window--right: var(--chat--spacing);\n  --chat--window--z-index: 9999;\n  --chat--window--border: 1px solid var(--chat--color-light-shade-50);\n  --chat--window--border-radius: var(--chat--border-radius);\n  --chat--window--margin-bottom: var(--chat--spacing);\n\n  /* Header Styles */\n  --chat--header-height: auto;\n  --chat--header--padding: var(--chat--spacing);\n  --chat--header--background: var(--chat--color-dark);\n  --chat--header--color: var(--chat--color-light);\n  --chat--header--border-top: none;\n  --chat--header--border-bottom: none;\n  --chat--header--border-left: none;\n  --chat--header--border-right: none;\n  --chat--heading--font-size: 2em;\n  --chat--subtitle--font-size: inherit;\n  --chat--subtitle--line-height: 1.8;\n\n  /* Message Styles */\n  --chat--message--font-size: 1rem;\n  --chat--message--padding: var(--chat--spacing);\n  --chat--message--border-radius: var(--chat--border-radius);\n  --chat--message-line-height: 1.5;\n  --chat--message--margin-bottom: calc(var(--chat--spacing) * 1);\n  --chat--message--bot--background: var(--chat--color-light);\n  --chat--message--bot--color: var(--chat--color-dark);\n  --chat--message--bot--border: none;\n  --chat--message--user--background: var(--chat--color-primary);\n  --chat--message--user--color: var(--chat--color-white);\n  --chat--message--user--border: none;\n  --chat--message--pre--background: #2a2a2a;\n  --chat--messages-list--padding: var(--chat--spacing);\n\n  /* Toggle Button */\n  --chat--toggle--size: 64px;\n  --chat--toggle--width: var(--chat--toggle--size);\n  --chat--toggle--height: var(--chat--toggle--size);\n  --chat--toggle--border-radius: 50%;\n  --chat--toggle--background: var(--chat--color-primary);\n  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);\n  --chat--toggle--active--background: var(--chat--color-primary-shade-100);\n  --chat--toggle--color: var(--chat--color-white);\n\n  /* Input Area */\n  --chat--textarea--height: 50px;\n  --chat--textarea--max-height: 30rem;\n  --chat--input--font-size: inherit;\n  --chat--input--border: 0;\n  --chat--input--border-radius: 0;\n  --chat--input--padding: 0.8rem;\n  --chat--input--background: #1a1a1a;\n  --chat--input--text-color: var(--chat--color-white);\n  --chat--input--line-height: 1.5;\n  --chat--input--placeholder--font-size: var(--chat--input--font-size);\n  --chat--input--border-active: 0;\n  --chat--input--left--panel--width: 2rem;\n\n  /* Button Styles */\n  --chat--button--color: var(--chat--color-light);\n  --chat--button--background: var(--chat--color-primary);\n  --chat--button--padding: calc(var(--chat--spacing) * 1 / 2) var(--chat--spacing);\n  --chat--button--border-radius: var(--chat--border-radius);\n  --chat--button--hover--color: var(--chat--color-white);\n  --chat--button--hover--background: var(--chat--color-primary-shade-50);\n  --chat--close--button--color-hover: var(--chat--color-light);\n\n  /* Send and File Buttons */\n  --chat--input--send--button--background: transparent;\n  --chat--input--send--button--color: var(--chat--color-light);\n  --chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);\n  --chat--input--send--button--color-hover: var(--chat--color-white);\n  --chat--input--file--button--background: transparent;\n  --chat--input--file--button--color: var(--chat--color-light);\n  --chat--input--file--button--background-hover: var(--chat--color-primary-shade-50);\n  --chat--input--file--button--color-hover: var(--chat--color-white);\n  --chat--files-spacing: 0.25rem;\n\n  /* Body and Footer */\n  --chat--body--background: #121212;\n  --chat--footer--background: #1a1a1a;\n  --chat--footer--color: var(--chat--color-light);\n}\n\n/* Message container */\n.chat-message {\n  max-width: 50%;\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -32,
+        -32
+      ],
+      "id": "e4ce42d8-8b5b-4286-8064-f069b5f538cf",
+      "name": "When chat message received",
+      "webhookId": "2c3dcbba-c14e-478e-b949-31adda6bf90c"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=## Objetivo\nEres un asistente tecnologico, tu nombre es Sabiondo, ayudas a buscar información en wikipedia.\n\n## Reglas\n- Regresa siempre respuestas de un párrafo o menos . No más.\n- Siempre pon las referencias de los artículos que consultas de Wikipedia.\n\n## Tools\n- Tienes una \"tool\" para conectarte a Wikipedia y traer información, puedes usarla para confirmar información."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        192,
+        -32
+      ],
+      "id": "b27aee26-8780-4569-a6c1-fee8538da615",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -352,
+        192
+      ],
+      "id": "6a26f06d-5075-4f3f-ac6a-d12e8a2174e7",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "PoOdx8EQeKRJpMTS",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        176
+      ],
+      "id": "5eec23ac-085f-4da3-9223-664121a9f266",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+      "typeVersion": 1,
+      "position": [
+        432,
+        144
+      ],
+      "id": "e2d6cf40-e81d-4769-99c0-eff3a93f8422",
+      "name": "Wikipedia"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        192
+      ],
+      "id": "f39e293c-9120-4baf-ba5c-0efbe567e0bf",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "wUk0MNwrB741YoXn",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      },
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wikipedia": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0726e589-56e7-4b24-868c-de82adfbc0f9",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1c60cfc62b06f723d05e1512c8a21037e546683a859f6caf317befd43a8e2f58"
+  },
+  "id": "p47l1HalCofAMWQP",
+  "tags": [
+    {
+      "updatedAt": "2025-11-11T18:16:21.976Z",
+      "createdAt": "2025-11-11T18:16:21.976Z",
+      "id": "iZKFvf2GHho5pX8d",
+      "name": "Wikipedia-Agent"
+    }
+  ]
+}
